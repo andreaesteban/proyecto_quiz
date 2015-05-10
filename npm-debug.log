@@ -21,7 +21,7 @@
 14 error You can get their info via:
 14 error     npm owner ls quiz
 14 error There is likely additional logging output above.
-15 error System Linux 3.11.0-12-generic
+15 error System Linux 3.11.0-26-generic
 16 error command "/usr/bin/nodejs" "/usr/bin/npm" "start"
 17 error cwd /home/andrea/proy_quiz/quiz
 18 error node -v v0.10.15
