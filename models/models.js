@@ -1,5 +1,8 @@
 var path = require('path');
 
+
+var pg = require('pg');
+
 // Postgres DATABASE_URL = postgres://user:passwd@host:port/database
 // SQLite DATABASE_URL = sqlite://:@:/
 var url = process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/
@@ -40,8 +43,11 @@ sequelize.sync().then(function() {
 		if(count === 0) { // la tabla se inicializa solo si está vacía
 			Quiz.create({pregunta: 'Capital de Italia',
 						 respuesta: 'Roma'
+						});
+			Quiz.create({pregunta: 'Capital de Portugal',
+						 respuesta: 'Lisboa'
 						})
-			.then(function(){console.log('Base de datos inicializada correctamente')});
+			.then(function(){console.log('BBDD inicializada correctamente')});
 		};
 	});
 });
