@@ -21,13 +21,21 @@ exports.answer = function(req, res) {
 };
 
 //GET /quizes
+//GET /quizes?search=texto_a_buscar
 exports.index = function(req,res) {
-	models.Quiz.findAll().then(function (quizes) {
- 		res.render('quizes/index', {quizes: quizes});
- 	})
+	if (req.query.search != null) {
+		models.Quiz.findAll({where: ["pregunta like ?", '%'+req.query.search+'%'], order:'pregunta ASC'})
+		.then(function (quizes) {
+			res.render('quizes/index', {quizes: quizes});
+		});
+	}else {
+		models.Quiz.findAll().then(function (quizes) {
+			res.render('quizes/index', {quizes: quizes});
+		});
+	}
 };
-
 //GET /author
 exports.author = function(req, res){
 	res.render('author', {autor: 'Andrea Esteban'})
 }
+
