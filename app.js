@@ -4,8 +4,9 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 var partials = require('express-partials'); //despues de importarlo a package.json
+var methodOverride = require('method-override');
+
 var routes = require('./routes/index');
 //borramos users
 
@@ -22,8 +23,8 @@ app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
+app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(partials()); //invocamos con () para genrar el MW a instalar en app.js
 app.use('/', routes);
 //borramos users
