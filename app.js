@@ -36,6 +36,7 @@ app.use(function(req, res, next){
             var actual = new Date().getTime();
             if((actual-req.session.user.tiempo)>120000){
                 req.session.user = undefined;
+                res.redirect('/login');
 
             }else{
                 req.session.user.tiempo = new Date().getTime();

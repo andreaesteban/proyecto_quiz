@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+    <title>Autor</title>
+     <link rel="icon" href="home/andrea/proy_quiz/quiz/public/finnicon.ico" type="image/x-icon" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h2>Estadisticas</h2>  
+    	<p><strong>Estadisticas:</strong></p>
+		<table>
+			<tr>
+				<td>No de preguntas: </td>
+				<td><%= preguntas %></td>
+			</tr>
+			<tr>
+				<td>No de comentarios: </td>
+				<td><%= comentarios %></td>
+			</tr>
+			<tr>
+				<td> No medio de comentarios por pregunta: </td>
+				<td><%= nMedComPre %></td>
+			</tr>
+			<tr>
+				<td> No de preguntas sin comentarios: </td>
+				<td><%= nPregSinCom %></td>
+			<tr>
+				<td>No de preguntas con comentarios: </td>
+				<td><%= nPregConCom %></td>
+			</tr>
+		</table>
+  </body>
+</html>

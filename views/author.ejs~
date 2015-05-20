@@ -10,6 +10,6 @@
     <h2>Autora de la pagina</h2>  
     	<p><%= autor %></p>
       <a href ="/author"> </a>
-      <p><img src="yo.jpg" border="2"  width="267" height="145" </img></p>
+      <p><img src="yo.jpg" border="2"  width="267" height="145" </img</p>
   </body>
 </html>
