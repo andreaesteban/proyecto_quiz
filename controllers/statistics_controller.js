@@ -11,14 +11,13 @@ exports.statistics = function(req, res){
 				var nPregConCom = 0;
 				var i;
 				for(i=0; i<nPreg; i++){
-						for(i=0; i<nComents; i++){
-							if(comments[i].quizId){
-								nPregSinCom++;
-								break;
-							}
-						}break;
+					for(j=0; j<nComents; j++){
+						if(comments[j].QuizId===i){
+							nPregConCom++;								break;
+						}
+					}
 				}
-				nPregConCom=(nPreg-nPregSinCom);
+				nPregSinCom=(nPreg-nPregConCom);
 			res.render('quizes/statistics', {quizes: quizes, 
 											preguntas: nPreg, 
 											comentarios: nComents, 
